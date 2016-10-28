@@ -1,31 +1,60 @@
 class TextTreeVisitor implements Visitor {
+  int layers = 0;
 
   public void visitLeaf(Leaf numberVal) {
-    System.out.print(numberVal);
+    System.out.print("[" + numberVal + "]\n");
   }
 
   public void visitPlusOperator(PlusOperator plus) {
-    System.out.print(plus);
+    int n = plus.numOfChild;
+    layers++;
+    System.out.print("[" + plus + "]\n");
+    for(int i = 0; i < n; i++) {
+      System.out.print(getTab() + " +---");
+      plus.getChild(i).accept(this);
+    }
   }
 
   public void visitMultiplyOperator(MultiplyOperator multiply) {
-    System.out.print(multiply);
+    int n = multiply.numOfChild;
+    layers++;
+    System.out.print("[" + multiply + "]\n");
+    for(int i = 0; i < n; i++) {
+      System.out.print(getTab() + " +---");
+      multiply.getChild(i).accept(this);
+    }
   }
 
   public void visitDivideOperator(DivideOperator divide) {
-    System.out.print(divide);
+    int n = divide.numOfChild;
+    layers++;
+    System.out.print("[" + divide + "]\n");
+    for(int i = 0; i < n; i++) {
+      System.out.print(getTab() + " +---");
+      divide.getChild(i).accept(this);
+    }
   }
 
   public void visitSubtractOperator(SubtractOperator subtract) {
-    /*int numOfChildren = subtract.getNumOfChildren();
-    for (i = 0; i < numOfChildren; i++) {
-      System.out.print(subtract.getChild(i).accept(this));
-    }*/
-    System.out.print(subtract);
+    int n = subtract.numOfChild;
+    System.out.print("[" + subtract + "]\n");
+    for(int i = 0; i < n; i++) {
+      System.out.print(" +---");
+      subtract.getChild(i).accept(this);
+    }
   }
 
-  public double getAnswer() {
-    return 0;
+  public String getTab() {
+    if (layers == 1) {
+      return "";
+    }
+    else {
+      String tabular = "";
+      for (int i = 1; i < layers; i++) {
+        tabular = tabular + "     ";
+      }
+      return tabular;
+    }
   }
 
 }

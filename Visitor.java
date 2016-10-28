@@ -4,6 +4,4 @@ interface Visitor {
   public void visitMultiplyOperator(MultiplyOperator multiply);
   public void visitDivideOperator(DivideOperator divide);
   public void visitSubtractOperator(SubtractOperator subtract);
-
-  public double getAnswer();
 }

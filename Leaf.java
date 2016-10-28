@@ -18,4 +18,7 @@ public class Leaf extends Component {
   public void accept(Visitor v) {
     v.visitLeaf(this);
   }
+  public int getVal() {
+    return val;
+  }
 }

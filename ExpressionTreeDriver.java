@@ -6,9 +6,17 @@ public class ExpressionTreeDriver {
     Component op2 = new PlusOperator(new Leaf(3), new Leaf(2), op1);
     Component op3 = new DivideOperator(new Leaf(1), op2);
 
-    Visitor visitor1 = new EvaluateVisitor();
+    Visitor visitor1 = new InfixVisitor();
+    Visitor visitor2 = new LispVisitor();
+    Visitor visitor3 = new EvaluateVisitor();
+    Visitor visitor4 = new TextTreeVisitor();
     op3.accept(visitor1);
-    System.out.println(visitor1.getAnswer());
+    System.out.println("");
+    op3.accept(visitor2);
+    System.out.print("\n\n");
+    op3.accept(visitor3);
+    System.out.println("");
+    op3.accept(visitor4);
 
 
     //System.out.print(op3);

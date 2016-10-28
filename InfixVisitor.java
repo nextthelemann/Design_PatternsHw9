@@ -53,9 +53,4 @@ class InfixVisitor implements Visitor {
       }
     }
   }
-
-  public double getAnswer() {
-    return 0;
-  }
-
 }

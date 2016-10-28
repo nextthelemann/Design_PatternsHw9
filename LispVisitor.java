@@ -40,9 +40,4 @@ class LispVisitor implements Visitor {
     }
     System.out.print(")");
   }
-
-  public double getAnswer() {
-    return 0;
-  }
-
 }
