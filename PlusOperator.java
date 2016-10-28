@@ -9,11 +9,6 @@ public class PlusOperator extends Operator {
 
   @Override
   public void accept(Visitor v) {
-    //v.visitPlusOperator(this);
-    /*int childCount = this.numOfChild;
-    for (int i = 0; i < childCount; i++) {
-      this.getChild(i).accept(v);
-    }*/
     v.visitPlusOperator(this);
   }
 }

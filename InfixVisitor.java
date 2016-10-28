@@ -35,7 +35,7 @@ class InfixVisitor implements Visitor {
     for(int i = 0; i < n; i++) {
       divide.getChild(i).accept(this);
       if (i+1 == n) {
-        System.out.println(")");
+        System.out.print(")");
       } else {
         System.out.print(divide);
       }
@@ -44,10 +44,11 @@ class InfixVisitor implements Visitor {
 
   public void visitSubtractOperator(SubtractOperator subtract) {
     int n = subtract.numOfChild;
+    System.out.print("(");
     for(int i = 0; i < n; i++) {
       subtract.getChild(i).accept(this);
       if (i+1 == n) {
-
+        System.out.print(")");
       } else {
         System.out.print(subtract);
       }

@@ -10,8 +10,6 @@ public class Leaf extends Component {
   // operation methods
   @Override
   public String toString() {
-    //String indention = getIndention();
-    //return indention + String.valueOf(val) + "\n";
     return String.valueOf(val);
   }
   @Override

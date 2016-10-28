@@ -49,19 +49,6 @@ abstract class Operator extends Component {
       throw new RuntimeException("Couldn't find Component within Operator Composite.");
     }
   }
-  /*
-  @Override
-  public String toString() {
-    String indention = getIndention();
-    String s = indention + instanceID + "\n";
-    Node<Component> currentNode = rootNode;
-    while(currentNode != null) {
-      s += currentNode.data.toString();
-      currentNode = currentNode.next;
-    }
-    return s;
-  }*/
-
   @Override
   public String toString() {
     return instanceID;
